@@ -68,3 +68,35 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+
+## Learining
+```
+mongoose.Types.ObjectId.isValid(id)
+```
+- To validate whether the Id send by the use is valid or not.
+
+## How to use router 
+
+### All the routes must have same names but different methods
+
+- Copy all the routes into a new file under routes folder.
+
+- Now do these imports
+```
+const express=require("express");
+const {Bookmodal}=require("../models/booksmodels") // This one is for book modal of mongoose
+const router=express.Router()
+```
+- Now replace `app` with `router` and `/books/:id` with `/:id`
+
+### Methods of importing
+- module.exports=router
+- const bookrouter=require(" ");
+- app.use("/books",bookrouter)
+------------------------------------
+- module.exports={
+    router
+}
+- const bookrouter=require(" ");
+- app.use("/books",bookrouter.router) // important
